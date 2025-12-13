@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipient Dashboard - MedShare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Recipient Dashboard</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="medicines.html" class="btn">Browse Medicines</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Your Requests</h2>
+      <div id="recipientLoading" class="loading" style="display:none">Loading...</div>
+      <div id="recipientEmpty" class="empty" style="display:none">You haven't requested any medicines yet.</div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Medicine Name</th>
+              <th>Donor Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="recipientRequestsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="css/js/recipient-dashboard.js"></script>
+</body>
+</html>
+
+

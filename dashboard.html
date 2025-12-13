@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - MedShare</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">💙 MedShare</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="login.html" id="logoutLink">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Welcome Section -->
+    <section class="page-header">
+      <h2 id="welcome">Welcome</h2>
+      <p id="roleText" class="subtitle"></p>
+    </section>
+
+    <!-- Donor Dashboard -->
+    <div id="donorDashboard" class="dashboard-section" style="display: none;">
+      <div class="dashboard-card">
+        <div class="dashboard-header">
+          <h3>My Donated Medicines</h3>
+          <a href="donate.html" class="btn green">Add New Medicine</a>
+        </div>
+        <div id="donorMedicines" class="medicines-grid">
+          <div class="loading">Loading your donated medicines...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recipient Dashboard -->
+    <div id="recipientDashboard" class="dashboard-section" style="display: none;">
+      <div class="dashboard-card">
+        <div class="dashboard-header">
+          <h3>Available Medicines</h3>
+        </div>
+        <!-- Filters: Name / Category / Expiry-before -->
+        <div class="filters" style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin:16px 0;">
+          <div>
+            <label for="filterName">Search by name</label>
+            <input id="filterName" type="text" placeholder="e.g., paracetamol" />
+          </div>
+
+          <div>
+            <label for="filterCategory">Category</label>
+            <input id="filterCategory" type="text" placeholder="e.g., pain, fever" />
+          </div>
+
+          <div>
+            <label for="filterExpiry">Expiry before</label>
+            <input id="filterExpiry" type="date" />
+          </div>
+
+          <button id="filterSearchBtn" class="btn green">Search</button>
+        </div>
+        <div id="availableMedicines" class="medicines-grid">
+          <div class="loading">Loading available medicines...</div>
+        </div>
+      </div>
+      
+      <div class="dashboard-card">
+        <div class="dashboard-header">
+          <h3>My Requests</h3>
+        </div>
+        <div id="myRequests" class="medicines-grid">
+          <div class="loading">Loading your requests...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="dashboard-section" style="display: none;">
+      <div class="admin-tabs">
+        <button class="tab-btn active" data-tab="overview">Overview</button>
+        <button class="tab-btn" data-tab="analytics">Analytics</button>
+        <button class="tab-btn" data-tab="medicines">Medicines</button>
+        <button class="tab-btn" data-tab="requests">Requests</button>
+        <button class="tab-btn" data-tab="users">Users</button>
+      </div>
+
+      <!-- Overview Tab -->
+      <div id="overviewTab" class="tab-content active">
+        <div class="cards">
+          <div class="card">
+            <h3>Total Medicines</h3>
+            <div id="totalMedicines" class="stat-number">-</div>
+          </div>
+          <div class="card">
+            <h3>Available Medicines</h3>
+            <div id="availableCount" class="stat-number">-</div>
+          </div>
+          <div class="card">
+            <h3>Claimed Medicines</h3>
+            <div id="claimedCount" class="stat-number">-</div>
+          </div>
+          <div class="card">
+            <h3>Total Users</h3>
+            <div id="totalUsers" class="stat-number">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medicines Tab -->
+      <!-- Analytics Tab -->
+      <div id="analyticsTab" class="tab-content">
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <h3>Analytics</h3>
+          </div>
+          <div id="analyticsContent" class="admin-items-container">
+            <div class="loading">Loading analytics...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medicines Tab -->
+      <div id="medicinesTab" class="tab-content">
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <h3>All Medicines</h3>
+          </div>
+          <div id="adminMedicines" class="admin-items-container">
+            <div class="loading">Loading medicines...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Requests Tab -->
+      <div id="requestsTab" class="tab-content">
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <h3>Medicine Requests</h3>
+          </div>
+          <div id="adminRequests" class="admin-items-container">
+            <div class="loading">Loading requests...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Users Tab -->
+      <div id="usersTab" class="tab-content">
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <h3>All Users</h3>
+          </div>
+          <div id="adminUsers" class="admin-items-container">
+            <div class="loading">Loading users...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script src="css/js/chart.umd.js"></script>
+  <script src="css/js/dashboard.js"></script>
+</body>
+</html>
+
+

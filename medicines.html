@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Medicines - MedShare</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">💙 MedShare</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="donate.html">Donate</a>
+      <a href="medicines.html" class="active">Browse</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h2>Available Medicines</h2>
+      <p>Browse and request medicines donated by our community</p>
+    </div>
+
+    <div class="medicines-grid" id="medicinesGrid">
+      <!-- Medicines will be loaded here dynamically -->
+    </div>
+
+    <div class="loading" id="loading" style="display: none;">
+      <p>Loading medicines...</p>
+    </div>
+
+    <div class="empty-state" id="emptyState" style="display: none;">
+      <p>No medicines available at the moment.</p>
+      <a href="donate.html" class="btn green">Be the first to donate!</a>
+    </div>
+  </div>
+
+  <script src="js/medicine.js"></script>
+</body>
+</html>

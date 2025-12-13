@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Medicine - MedShare</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">💙 MedShare</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="donate.html" class="active">Donate</a>
+      <a href="medicines.html">Browse</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>Donate Surplus Medicine</h2>
+    <p class="subtitle">Help others by donating your unused medicines</p>
+    
+    <form id="donateForm">
+      <label>Medicine Name *</label>
+      <input type="text" id="name" required placeholder="e.g., Paracetamol 500mg">
+      
+      <label>Description</label>
+      <textarea id="description" rows="3" placeholder="Brief description, dosage instructions, etc."></textarea>
+      
+      <label>Expiry Date *</label>
+      <input type="date" id="expiryDate" required>
+      
+      <label>Quantity *</label>
+      <input type="number" id="quantity" required min="1" placeholder="Number of units">
+      
+      <button type="submit" class="btn green">Donate Medicine</button>
+    </form>
+    
+    <div class="form-footer">
+      <p>Want to browse available medicines? <a href="medicines.html">View all</a></p>
+    </div>
+  </div>
+
+  <script src="js/medicine.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medicine Requests - MedShare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Medicine Requests</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="medicines.html">Browse</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 id="requestsTitle">Your Requests</h2>
+      <div id="requestsLoading" class="loading" style="display:none">Loading...</div>
+      <div id="requestsEmpty" class="empty" style="display:none">No requests found.</div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Recipient</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="requestsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="css/js/requests.js"></script>
+  
+</body>
+</html>
+
+

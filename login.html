@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MedShare</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">💙 MedShare</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>Welcome Back</h2>
+    <form id="loginForm">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" required>
+
+      <label>Password</label>
+      <input type="password" id="loginPassword" required>
+
+      <button type="submit" class="btn green">Sign In</button>
+    </form>
+    <p>Don’t have an account? <a href="register.html">Create one</a></p>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donor Dashboard - MedShare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Donor Dashboard</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="donate.html" class="btn">Add New Medicine</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Your Donations</h2>
+      <div id="donorLoading" class="loading" style="display:none">Loading...</div>
+      <div id="donorEmpty" class="empty" style="display:none">You haven't donated any medicines yet.</div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Medicine Name</th>
+              <th>Quantity</th>
+              <th>Expiry Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="donorMedicinesBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="css/js/donor-dashboard.js"></script>
+</body>
+</html>
+
+

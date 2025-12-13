@@ -1,0 +1,32 @@
+{
+  "name": "medshare-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test:auth": "node scripts/testAuth.mjs",
+    "test:auth-comprehensive": "node tests/auth.test.js",
+    "test:medicines": "node tests/medicines.test.js",
+    "test:complete": "node scripts/testComplete.mjs",
+    "test:donate": "node scripts/testDonationFlow.mjs",
+    "test:request": "node scripts/testRequestFlow.mjs",
+    "cron:test": "node cron/expiryReminder.js --once"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^4.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.2",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^7.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

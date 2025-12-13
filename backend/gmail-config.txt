@@ -1,0 +1,7 @@
+# Add these lines to your backend/.env file
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=465
+EMAIL_SECURE=true
+EMAIL_USER=12bavithra102004@gmail.com
+EMAIL_PASS=your-app-password-here
+EMAIL_FROM="MedShare" <12bavithra102004@gmail.com>

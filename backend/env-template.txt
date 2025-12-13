@@ -1,0 +1,67 @@
+# MedShare Backend Environment Variables
+
+# Server Configuration
+PORT=5000
+CLIENT_ORIGIN=http://127.0.0.1:5500
+
+# Database Configuration
+MONGODB_URI=mongodb://localhost:27017/medshare
+
+# JWT Configuration
+JWT_SECRET=dev-secret-change-me-in-production
+
+# Email Configuration - Real SMTP Providers
+# Choose ONE of the following configurations:
+
+# ===========================================
+# GMAIL SMTP Configuration (Recommended)
+# ===========================================
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_SECURE=false
+EMAIL_USER=your-gmail@gmail.com
+EMAIL_PASS=your-app-password
+EMAIL_FROM="MedShare" <your-gmail@gmail.com>
+
+# Admin notifications recipient (receives donation and request notifications)
+ADMIN_EMAIL=admin@yourdomain.com
+
+# ===========================================
+# OUTLOOK/HOTMAIL SMTP Configuration
+# ===========================================
+# EMAIL_HOST=smtp-mail.outlook.com
+# EMAIL_PORT=587
+# EMAIL_SECURE=false
+# EMAIL_USER=your-email@outlook.com
+# EMAIL_PASS=your-password
+# EMAIL_FROM="MedShare" <your-email@outlook.com>
+
+# ===========================================
+# YAHOO SMTP Configuration
+# ===========================================
+# EMAIL_HOST=smtp.mail.yahoo.com
+# EMAIL_PORT=587
+# EMAIL_SECURE=false
+# EMAIL_USER=your-email@yahoo.com
+# EMAIL_PASS=your-app-password
+# EMAIL_FROM="MedShare" <your-email@yahoo.com>
+
+# ===========================================
+# Instructions for Setup:
+# ===========================================
+# 1. Gmail Setup:
+#    - Enable 2-factor authentication
+#    - Generate App Password: https://myaccount.google.com/apppasswords
+#    - Use App Password as EMAIL_PASS (not your regular password)
+#
+# 2. Outlook Setup:
+#    - Enable 2-factor authentication
+#    - Generate App Password: https://account.microsoft.com/security
+#    - Use App Password as EMAIL_PASS
+#
+# 3. Yahoo Setup:
+#    - Enable 2-factor authentication
+#    - Generate App Password: https://login.yahoo.com/account/security
+#    - Use App Password as EMAIL_PASS
+#
+# 4. If no credentials are provided, system will use Ethereal test accounts
