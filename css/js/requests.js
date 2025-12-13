@@ -1,9 +1,12 @@
 const API_BASE_URL = "https://medshare-b5zb.onrender.com";
 const REQUEST_API = `${API_BASE_URL}/api/requests`;
 
-
 function getUser() {
-  try { return JSON.parse(localStorage.getItem('user') || '{}'); } catch { return {}; }
+  try {
+    return JSON.parse(localStorage.getItem('user') || '{}');
+  } catch {
+    return {};
+  }
 }
 
 function ensureAuth() {
@@ -18,6 +21,7 @@ function ensureAuth() {
 
 async function loadRequests() {
   if (!ensureAuth()) return;
+
   const user = getUser();
   const tbody = document.getElementById('requestsBody');
   const loading = document.getElementById('requestsLoading');
@@ -31,19 +35,22 @@ async function loadRequests() {
   try {
     const token = localStorage.getItem('token');
     let url = '';
+
     if (user.role === 'ADMIN') {
       title.textContent = 'All Requests';
-      url = `${API_URL}/requests`;
+      url = `${REQUEST_API}`;
     } else if (user.role === 'RECIPIENT') {
       title.textContent = 'Your Requests';
-      url = `${API_URL}/requests/my`;
+      url = `${REQUEST_API}/my`;
     } else {
       title.textContent = 'Related Requests';
-      // Optional: could add donor-related view later
-      url = `${API_URL}/requests/my`;
+      url = `${REQUEST_API}/my`;
     }
 
-    const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+    const res = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
     const data = await res.json();
     loading.style.display = 'none';
 
@@ -56,10 +63,15 @@ async function loadRequests() {
       const medName = r.medicineId?.name || 'Unknown';
       const recName = r.recipientId?.name || 'You';
       const status = r.status;
-      const actions = (user.role === 'ADMIN' && status === 'PENDING') ? `
-        <button class="btn green small" data-action="approve" data-id="${r._id}">Approve</button>
-        <button class="btn red small" data-action="reject" data-id="${r._id}">Reject</button>
-      ` : '<span>-</span>';
+
+      const actions =
+        user.role === 'ADMIN' && status === 'PENDING'
+          ? `
+            <button class="btn green small" data-action="approve" data-id="${r._id}">Approve</button>
+            <button class="btn red small" data-action="reject" data-id="${r._id}">Reject</button>
+          `
+          : '<span>-</span>';
+
       return `
         <tr>
           <td>${medName}</td>
@@ -75,6 +87,7 @@ async function loadRequests() {
         btn.addEventListener('click', onAdminAction);
       });
     }
+
   } catch (err) {
     loading.style.display = 'none';
     alert('Failed to load requests');
@@ -84,14 +97,18 @@ async function loadRequests() {
 async function onAdminAction(e) {
   const id = e.target.getAttribute('data-id');
   const action = e.target.getAttribute('data-action');
+
   if (!confirm(`Are you sure you want to ${action} this request?`)) return;
+
   try {
     const token = localStorage.getItem('token');
-    const res = await fetch(`${API_URL}/requests/${id}/${action}`, {
+    const res = await fetch(`${REQUEST_API}/${id}/${action}`, {
       method: 'PATCH',
       headers: { Authorization: `Bearer ${token}` }
     });
+
     const data = await res.json();
+
     if (res.ok) {
       alert(`Request ${action}d`);
       loadRequests();
@@ -104,5 +121,3 @@ async function onAdminAction(e) {
 }
 
 document.addEventListener('DOMContentLoaded', loadRequests);
-
-
