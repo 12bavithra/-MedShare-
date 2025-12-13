@@ -1,5 +1,6 @@
-const API_URL = "http://localhost:5000/api";
-const MEDICINE_API = `${API_URL}/medicines`;
+const API_BASE_URL = "https://medshare-b5zb.onrender.com";
+const MEDICINE_API = `${API_BASE_URL}/api/medicines`;
+
 
 function ensureRecipient() {
   const token = localStorage.getItem("token");

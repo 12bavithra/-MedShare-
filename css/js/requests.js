@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://medshare-b5zb.onrender.com";
+const REQUEST_API = `${API_BASE_URL}/api/requests`;
+
 
 function getUser() {
   try { return JSON.parse(localStorage.getItem('user') || '{}'); } catch { return {}; }

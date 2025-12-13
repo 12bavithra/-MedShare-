@@ -1,7 +1,8 @@
-const AUTH_API = "http://localhost:5000/api/auth";
-const MEDICINE_API = "http://localhost:5000/api/medicines";
-const REQUEST_API = "http://localhost:5000/api/requests";
-const ADMIN_API = "http://localhost:5000/api/admin";
+const API_BASE_URL = "https://medshare-b5zb.onrender.com";
+const AUTH_API = `${API_BASE_URL}/api/auth`;
+const MEDICINE_API = `${API_BASE_URL}/api/medicines`;
+const REQUEST_API = `${API_BASE_URL}/api/requests`;
+const ADMIN_API = `${API_BASE_URL}/api/admin`;
 
 let currentUser = null;
 

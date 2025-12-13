@@ -1,6 +1,6 @@
-const API_URL = "http://localhost:5000/api";
-const AUTH_API = `${API_URL}/auth`;
-const MEDICINE_API = `${API_URL}/medicines`;
+const API_BASE_URL = "https://medshare-b5zb.onrender.com";
+const AUTH_API = `${API_BASE_URL}/api/auth`;
+const MEDICINE_API = `${API_BASE_URL}/api/medicines`;
 
 // Check if user is logged in and has required role
 function checkAuth(requiredRole = null) {
